@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+ {% block feedbackstatus %} active {% endblock feedbackstatus %}
+
+{% block class %}
+    class="sub_page"
+{% endblock class %}
+
+
+{% block main %}
+  <!-- start feedback form -->
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          What Says Our Customers
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="{% url "feedback" %}" method='POST'enctype="multipart/form-data"> {% csrf_token %}
+              <div>
+                <input type="text" class="form-control" name="user_name" required placeholder="Your Name" />
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="text_field" id="exampleFormControlTextarea1" rows="3" required placeholder="Give Your Opninon"></textarea>
+              </div>
+              <div>
+                <select class="form-control nice-select wide" required name="total_rating">
+                  <option value="" disabled selected>
+                    Please Give Us Rating?
+                  </option>
+                  <option value="1">
+                    1
+                  </option>
+                  <option value="2">
+                    2
+                  </option>
+                  <option value="3">
+                    3
+                  </option>
+                  <option value="4">
+                    4
+                  </option>
+                  <option value="5">
+                    5
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <input class="form-control" name="file" type="file" id="formFile">
+              </div>
+              <div class="btn_box">
+                <button>
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end feedback form -->
+
+{% endblock main %}
+    
+
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+          What Says Our Customers
+        </h2>
+      </div>
+      <div class="carousel-wrap row ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                </p>
+                <h6>
+                  Moana Michell
+                </h6>
+                <p>
+                  magna aliqua
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="images/client1.jpg" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                </p>
+                <h6>
+                  Mike Hamell
+                </h6>
+                <p>
+                  magna aliqua
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="images/client2.jpg" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
